@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<VBox alignment="CENTER" fillWidth="false" spacing="30.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.Controller">
+   <children>
+       <Label fx:id="winner" prefHeight="60.0" prefWidth="300.0" textFill="#008000" alignment="CENTER">
+           <font>
+               <Font name="System Bold" size="40.0" />
+           </font>
+       </Label>
+       <Button focusTraversable="false" onAction="#switchToMenu" prefHeight="35.0" prefWidth="110.0" text="Menu" textAlignment="CENTER" textFill="#008000">
+           <font>
+               <Font name="System Bold" size="20.0" />
+           </font>
+       </Button>
+   </children>
+</VBox>

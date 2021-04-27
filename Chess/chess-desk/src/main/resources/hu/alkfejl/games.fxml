@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" fillWidth="false" prefHeight="500.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.alkfejl.DatabaseController">
+   <children>
+       <Label prefHeight="20.0" prefWidth="200.0" text="Games Played" textFill="#008000">
+           <font>
+               <Font name="System Bold" size="30.0" />
+           </font>
+       </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10">
+         <children>
+            <VBox alignment="CENTER" prefHeight="70.0" prefWidth="112.5" spacing="5.0">
+               <children>
+                  <Label text="White player" />
+                  <TextField fx:id="player2" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="70.0" prefWidth="112.5" spacing="5.0">
+               <children>
+                  <Label text="Black player" />
+                  <TextField fx:id="player1" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="48.0" prefWidth="360.0" spacing="10">
+         <children>
+            <VBox alignment="CENTER" layoutX="123.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" spacing="5.0">
+               <children>
+                  <Label text="Winner" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="White">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="winner" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Black" toggleGroup="$winner" />
+                        <RadioButton mnemonicParsing="false" text="Draw" toggleGroup="$winner" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="236.0" layoutY="10.0" prefHeight="50.0" prefWidth="180.0" spacing="5.0">
+               <children>
+                  <Label text="Date" />
+                  <DatePicker fx:id="date" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+       <Button focusTraversable="false" onAction="#searchGame" prefHeight="22.0" prefWidth="59.0" text="Search" textAlignment="CENTER" textFill="#008000">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+       </Button>
+       <Button focusTraversable="false" onAction="#clearConditions" prefHeight="22.0" prefWidth="59.0" text="Clear" textAlignment="CENTER" textFill="#008000">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+       </Button>
+      <TableView fx:id="gamesView" layoutX="46.0" layoutY="43.0" prefHeight="287.0" prefWidth="450.0">
+        <columns>
+          <TableColumn fx:id="whitePlayerCol" prefWidth="150.0" text="White Player" />
+          <TableColumn fx:id="blackPlayerCol" prefWidth="150.0" text="Black Player" />
+            <TableColumn fx:id="scoreCol" prefWidth="60.0" text="Score" />
+            <TableColumn fx:id="dateCol" text="Date" />
+        </columns>
+      </TableView>
+       <Button focusTraversable="false" onAction="#switchToMenu" prefHeight="35.0" prefWidth="110.0" text="Back" textAlignment="CENTER" textFill="#008000">
+           <font>
+               <Font name="System Bold" size="20.0" />
+           </font>
+       </Button>
+   </children>
+</VBox>
